@@ -2,7 +2,7 @@
 
 A [Home Assistant](https://www.home-assistant.io) custom component to turn a [Ultimate Ears](https://www.ultimateears.com) **UE Boom / Megaboom** speaker on and off remotely over Bluetooth Low Energy (BLE).
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
+[![Open your Home Assistant instance and open this repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=kernelb00t&repository=homeassistant-ue-boom&category=integration)
 
 It exposes:
 
@@ -64,3 +64,7 @@ Based on prior reverse-engineering work by the community:
 - [cstan11/ue-boom-macos](https://github.com/cstan11/ue-boom-macos)
 - [whayn/ueboom-ctl](https://github.com/whayn/ueboom-ctl)
 - [alessandroaime/homebridge-ueboom](https://github.com/alessandroaime/homebridge-ueboom)
+
+## Credits
+
+This integration was coded using [Zed](https://zed.dev) as the editor and [DeepSeek V4 Pro](https://www.deepseek.com) as the AI coding assistant.
