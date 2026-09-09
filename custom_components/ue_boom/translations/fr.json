@@ -1,0 +1,49 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "UE Boom",
+        "description": "Sélectionnez votre enceinte UE Boom."
+      },
+      "manual": {
+        "title": "UE Boom",
+        "description": "Saisissez l'adresse Bluetooth de votre enceinte UE Boom."
+      },
+      "trusted_mac": {
+        "title": "Appareil de confiance",
+        "description": "Saisissez l'adresse MAC d'un appareil autorisé à allumer/éteindre l'enceinte à distance (enceinte : {address}). C'est généralement la MAC Bluetooth du téléphone appairé dans le réglage « Allumage à distance » de l'app UE Boom — sur iOS : Réglages → Général → Informations → Bluetooth.",
+        "data": {
+          "trusted_mac": "MAC de l'appareil de confiance"
+        }
+      }
+    },
+    "error": {
+      "invalid_mac": "Adresse MAC invalide"
+    }
+  },
+  "entity": {
+    "button": {
+      "power_on": {
+        "name": "Allumer"
+      },
+      "power_off": {
+        "name": "Éteindre"
+      }
+    },
+    "binary_sensor": {
+      "bluetooth_signal": {
+        "name": "Signal Bluetooth"
+      }
+    },
+    "sensor": {
+      "battery": {
+        "name": "Batterie"
+      }
+    }
+  },
+  "exceptions": {
+    "device_not_found": {
+      "message": "Enceinte UE Boom {address} introuvable en Bluetooth. {reason}"
+    }
+  }
+}

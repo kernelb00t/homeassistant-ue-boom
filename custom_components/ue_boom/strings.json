@@ -1,0 +1,49 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "UE Boom",
+        "description": "Select your UE Boom speaker."
+      },
+      "manual": {
+        "title": "UE Boom",
+        "description": "Enter the Bluetooth address of your UE Boom speaker."
+      },
+      "trusted_mac": {
+        "title": "Trusted device",
+        "description": "Enter the MAC address of a device authorized to turn the speaker on/off remotely (speaker: {address}). This is typically the Bluetooth MAC of the phone you paired in the UE Boom app's \"Remote power on\" setting — on iOS find it in Settings → General → About → Bluetooth.",
+        "data": {
+          "trusted_mac": "Trusted device MAC"
+        }
+      }
+    },
+    "error": {
+      "invalid_mac": "Invalid MAC address"
+    }
+  },
+  "entity": {
+    "button": {
+      "power_on": {
+        "name": "Power on"
+      },
+      "power_off": {
+        "name": "Power off"
+      }
+    },
+    "binary_sensor": {
+      "bluetooth_signal": {
+        "name": "Bluetooth signal"
+      }
+    },
+    "sensor": {
+      "battery": {
+        "name": "Battery"
+      }
+    }
+  },
+  "exceptions": {
+    "device_not_found": {
+      "message": "UE Boom speaker {address} was not found via Bluetooth. {reason}"
+    }
+  }
+}
