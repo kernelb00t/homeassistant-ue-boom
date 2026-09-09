@@ -10,6 +10,7 @@ import voluptuous as vol
 from homeassistant.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_discovered_service_info,
+    async_request_active_scan,
 )
 from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
 from homeassistant.const import CONF_ADDRESS
@@ -22,6 +23,9 @@ _LOGGER = logging.getLogger(__name__)
 
 # Sentinel value for the "enter address manually" choice.
 MANUAL_ADDRESS = "manual"
+
+# How long (in seconds) to actively scan for nearby speakers during setup.
+ACTIVE_SCAN_TIMEOUT = 10
 
 
 def _is_ue_boom(service_info: BluetoothServiceInfoBleak) -> bool:
@@ -72,6 +76,13 @@ class UeBoomConfigFlow(ConfigFlow, domain=DOMAIN):
             await self.async_set_unique_id(address, raise_on_progress=False)
             self._abort_if_unique_id_configured()
             return await self.async_step_trusted_mac()
+
+        # Trigger a fresh active scan so nearby speakers (in standby) are
+        # discovered, rather than relying only on cached advertisements.
+        try:
+            await async_request_active_scan(self.hass, ACTIVE_SCAN_TIMEOUT)
+        except Exception:  # active scan is best-effort
+            _LOGGER.debug("Active scan failed; falling back to cached devices")
 
         self._discovered = {}
         current_addresses = self._async_current_ids(include_ignore=False)
