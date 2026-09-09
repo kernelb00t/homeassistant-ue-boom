@@ -3,11 +3,17 @@
     "step": {
       "user": {
         "title": "UE Boom",
-        "description": "Sélectionnez votre enceinte UE Boom."
+        "description": "Sélectionnez votre enceinte UE Boom parmi les appareils Bluetooth détectés à proximité par Home Assistant. Si votre enceinte n'apparaît pas, assurez-vous qu'elle est éteinte (en veille) et à portée Bluetooth, puis réessayez.",
+        "data": {
+          "address": "Enceinte"
+        }
       },
       "manual": {
         "title": "UE Boom",
-        "description": "Saisissez l'adresse Bluetooth de votre enceinte UE Boom."
+        "description": "Saisissez l'adresse MAC Bluetooth de votre enceinte UE Boom (par exemple AA:BB:CC:DD:EE:FF). L'enceinte doit être éteinte (en veille) pour être détectable.",
+        "data": {
+          "address": "Adresse MAC"
+        }
       },
       "trusted_mac": {
         "title": "Appareil de confiance",

@@ -3,11 +3,17 @@
     "step": {
       "user": {
         "title": "UE Boom",
-        "description": "Select your UE Boom speaker."
+        "description": "Select your UE Boom speaker from the nearby Bluetooth devices detected by Home Assistant. If your speaker does not appear, make sure it is turned off (in standby) and in Bluetooth range, then try again.",
+        "data": {
+          "address": "Speaker"
+        }
       },
       "manual": {
         "title": "UE Boom",
-        "description": "Enter the Bluetooth address of your UE Boom speaker."
+        "description": "Enter the Bluetooth MAC address of your UE Boom speaker (for example AA:BB:CC:DD:EE:FF). The speaker must be turned off (in standby) to be discoverable.",
+        "data": {
+          "address": "MAC address"
+        }
       },
       "trusted_mac": {
         "title": "Trusted device",
