@@ -65,6 +65,10 @@ Based on prior reverse-engineering work by the community:
 - [whayn/ueboom-ctl](https://github.com/whayn/ueboom-ctl)
 - [alessandroaime/homebridge-ueboom](https://github.com/alessandroaime/homebridge-ueboom)
 
+## Releasing
+
+See [RELEASE.md](RELEASE.md) for how to publish a new release.
+
 ## Credits
 
 This integration was coded using [Zed](https://zed.dev) as the editor and [DeepSeek V4 Pro](https://www.deepseek.com) as the AI coding assistant.
