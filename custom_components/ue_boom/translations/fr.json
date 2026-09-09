@@ -24,7 +24,7 @@
       }
     },
     "error": {
-      "invalid_mac": "Adresse MAC invalide"
+      "invalid_mac": "Adresse MAC invalide — utilisez 12 caractères hexadécimaux (0-9 et A-F)"
     }
   },
   "entity": {

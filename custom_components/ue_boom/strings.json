@@ -24,7 +24,7 @@
       }
     },
     "error": {
-      "invalid_mac": "Invalid MAC address"
+      "invalid_mac": "Invalid MAC address — use 12 hexadecimal characters (0-9 and A-F)"
     }
   },
   "entity": {
