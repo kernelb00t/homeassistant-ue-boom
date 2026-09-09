@@ -1,13 +1,6 @@
 {
   "domain": "ue_boom",
   "name": "UE Boom",
-  "codeowners": ["@kernelb00t"],
-  "config_flow": true,
-  "dependencies": ["bluetooth"],
-  "documentation": "https://github.com/kernelb00t/homeassistant-ue-boom",
-  "issue_tracker": "https://github.com/kernelb00t/homeassistant-ue-boom/issues",
-  "iot_class": "local_polling",
-  "version": "1.0.0",
   "bluetooth": [
     {
       "service_uuid": "0000fe9f-0000-1000-8000-00805f9b34fb",
@@ -17,5 +10,12 @@
       "manufacturer_id": 224,
       "connectable": true
     }
-  ]
+  ],
+  "codeowners": ["@kernelb00t"],
+  "config_flow": true,
+  "dependencies": ["bluetooth"],
+  "documentation": "https://github.com/kernelb00t/homeassistant-ue-boom",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/kernelb00t/homeassistant-ue-boom/issues",
+  "version": "1.0.0"
 }
