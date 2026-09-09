@@ -3,21 +3,21 @@
     "step": {
       "user": {
         "title": "UE Boom",
-        "description": "Sélectionnez votre enceinte UE Boom parmi les appareils Bluetooth détectés à proximité par Home Assistant. Si votre enceinte n'apparaît pas, assurez-vous qu'elle est éteinte (en veille) et à portée Bluetooth, puis réessayez.",
+        "description": "Sélectionnez votre enceinte UE Boom parmi les appareils Bluetooth détectés à proximité par Home Assistant.\n\nSi votre enceinte n'apparaît pas : elle doit être **éteinte** (en veille) pour émettre en BLE. Une enceinte allumée utilise le Bluetooth classique et ne peut pas être découverte ainsi. Éteignez-la, patientez quelques secondes, puis revenez en arrière et réessayez.",
         "data": {
           "address": "Enceinte"
         }
       },
       "manual": {
         "title": "UE Boom",
-        "description": "Saisissez l'adresse MAC Bluetooth de votre enceinte UE Boom (par exemple AA:BB:CC:DD:EE:FF). L'enceinte doit être éteinte (en veille) pour être détectable.",
+        "description": "Saisissez l'adresse MAC Bluetooth de votre enceinte UE Boom, par exemple `AA:BB:CC:DD:EE:FF`.\n\nL'enceinte doit être **éteinte** (en veille) pour être joignable.\n\n**Comment trouver cette adresse :**\n- **Le plus simple (toutes plateformes) :** enceinte en veille, scannez avec une app BLE (nRF Connect, LightBlue) — l'enceinte apparaît comme appareil UE/BOOM et sa MAC est affichée.\n- **macOS :** maintenez ⌥ Option et cliquez sur l'icône Bluetooth dans la barre de menus.\n- **Windows :** Gestionnaire de périphériques → Bluetooth → votre enceinte → Propriétés → Détails → « Adresse radio Bluetooth ».\n- **Android :** Paramètres → Appareils connectés → touchez la roue dentée à côté de « BOOM » (l'adresse peut y figurer), sinon utilisez une app de scan BLE.\n- **iOS :** iOS n'expose pas les adresses MAC Bluetooth — utilisez une app de scan BLE.",
         "data": {
           "address": "Adresse MAC"
         }
       },
       "trusted_mac": {
         "title": "Appareil de confiance",
-        "description": "Saisissez l'adresse MAC d'un appareil autorisé à allumer/éteindre l'enceinte à distance (enceinte : {address}). C'est généralement la MAC Bluetooth du téléphone appairé dans le réglage « Allumage à distance » de l'app UE Boom — sur iOS : Réglages → Général → Informations → Bluetooth.",
+        "description": "Saisissez l'adresse MAC d'un appareil autorisé à allumer/éteindre l'enceinte à distance (enceinte : {address}). C'est la MAC Bluetooth du téléphone ou de l'ordinateur appairé dans le réglage « Allumage à distance » de l'app UE Boom.\n\n- **iOS :** Réglages → Général → Informations → Bluetooth.\n- **Android :** Paramètres → À propos du téléphone → État → Adresse Bluetooth (varie selon le fabricant).\n- **macOS :** maintenez ⌥ Option et cliquez sur l'icône Bluetooth dans la barre de menus (l'adresse de votre Mac).\n- **Windows :** Gestionnaire de périphériques → Bluetooth → votre adaptateur → Propriétés → Détails → « Adresse radio Bluetooth ».",
         "data": {
           "trusted_mac": "MAC de l'appareil de confiance"
         }

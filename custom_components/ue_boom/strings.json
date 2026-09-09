@@ -3,21 +3,21 @@
     "step": {
       "user": {
         "title": "UE Boom",
-        "description": "Select your UE Boom speaker from the nearby Bluetooth devices detected by Home Assistant. If your speaker does not appear, make sure it is turned off (in standby) and in Bluetooth range, then try again.",
+        "description": "Select your UE Boom speaker from the nearby Bluetooth devices detected by Home Assistant.\n\nIf your speaker is not listed: it must be turned **off** (in standby) to advertise over BLE. A speaker that is powered on uses classic Bluetooth and cannot be discovered this way. Turn it off, wait a few seconds, then go back and try again.",
         "data": {
           "address": "Speaker"
         }
       },
       "manual": {
         "title": "UE Boom",
-        "description": "Enter the Bluetooth MAC address of your UE Boom speaker (for example AA:BB:CC:DD:EE:FF). The speaker must be turned off (in standby) to be discoverable.",
+        "description": "Enter the Bluetooth MAC address of your UE Boom speaker, for example `AA:BB:CC:DD:EE:FF`.\n\nThe speaker must be turned **off** (in standby) to be reachable.\n\n**How to find the address:**\n- **Easiest (any platform):** while the speaker is in standby, scan with a BLE app such as nRF Connect or LightBlue — the speaker advertises as a UE/BOOM device and its MAC is displayed.\n- **macOS:** hold ⌥ Option and click the Bluetooth icon in the menu bar.\n- **Windows:** Device Manager → Bluetooth → your speaker → Properties → Details → \"Bluetooth radio address\".\n- **Android:** Settings → Connected devices → tap the gear next to \"BOOM\" (the address may be shown), otherwise use a BLE scanner app.\n- **iOS:** iOS does not expose Bluetooth MAC addresses — use a BLE scanner app.",
         "data": {
           "address": "MAC address"
         }
       },
       "trusted_mac": {
         "title": "Trusted device",
-        "description": "Enter the MAC address of a device authorized to turn the speaker on/off remotely (speaker: {address}). This is typically the Bluetooth MAC of the phone you paired in the UE Boom app's \"Remote power on\" setting — on iOS find it in Settings → General → About → Bluetooth.",
+        "description": "Enter the MAC address of a device authorized to turn the speaker on/off remotely (speaker: {address}). This is the Bluetooth MAC of the phone or computer you paired in the UE Boom app's \"Remote power on\" setting.\n\n- **iOS:** Settings → General → About → Bluetooth.\n- **Android:** Settings → About phone → Status → Bluetooth address (varies by manufacturer).\n- **macOS:** hold ⌥ Option and click the Bluetooth icon in the menu bar (your Mac's address).\n- **Windows:** Device Manager → Bluetooth → your adapter → Properties → Details → \"Bluetooth radio address\".",
         "data": {
           "trusted_mac": "Trusted device MAC"
         }
