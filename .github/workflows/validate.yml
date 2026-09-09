@@ -26,4 +26,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Hassfest validation
-        uses: home-assistant/actions/hassfest@master
+        run: |
+          for attempt in 1 2 3; do
+            echo "Running hassfest (attempt ${attempt}/3)…"
+            if docker run --rm -v $GITHUB_WORKSPACE://github/workspace ghcr.io/home-assistant/hassfest; then
+              exit 0
+            fi
+            echo "::warning::hassfest failed, retrying in 20s…"
+            sleep 20
+          done
+          exit 1
