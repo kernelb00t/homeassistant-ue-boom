@@ -6,13 +6,14 @@
   "dependencies": ["bluetooth"],
   "documentation": "https://github.com/kernelb00t/homeassistant-ue-boom",
   "iot_class": "local_polling",
+  "version": "1.0.0",
   "bluetooth": [
     {
       "service_uuid": "0000fe9f-0000-1000-8000-00805f9b34fb",
       "connectable": true
     },
     {
-      "manufacturer_id": [224],
+      "manufacturer_id": 224,
       "connectable": true
     }
   ]
