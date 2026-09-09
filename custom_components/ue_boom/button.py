@@ -8,7 +8,7 @@ from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import UeBoomConfigEntry, device_info
 from .ble import async_send_power_command
-from .const import CMD_POWER_OFF, CMD_POWER_ON
+from .const import CMD_POWER_ON
 
 
 async def async_setup_entry(
@@ -16,13 +16,8 @@ async def async_setup_entry(
     entry: UeBoomConfigEntry,
     async_add_entities: AddConfigEntryEntitiesCallback,
 ) -> None:
-    """Set up the UE Boom buttons."""
-    async_add_entities(
-        [
-            UeBoomPowerButton(entry, CMD_POWER_ON, "power_on"),
-            UeBoomPowerButton(entry, CMD_POWER_OFF, "power_off"),
-        ]
-    )
+    """Set up the UE Boom button."""
+    async_add_entities([UeBoomPowerButton(entry, CMD_POWER_ON, "power_on")])
 
 
 class UeBoomPowerButton(ButtonEntity):

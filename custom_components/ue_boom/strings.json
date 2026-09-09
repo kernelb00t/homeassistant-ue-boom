@@ -31,9 +31,6 @@
     "button": {
       "power_on": {
         "name": "Power on"
-      },
-      "power_off": {
-        "name": "Power off"
       }
     },
     "binary_sensor": {

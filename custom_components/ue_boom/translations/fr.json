@@ -31,9 +31,6 @@
     "button": {
       "power_on": {
         "name": "Allumer"
-      },
-      "power_off": {
-        "name": "Éteindre"
       }
     },
     "binary_sensor": {

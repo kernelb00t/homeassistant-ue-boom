@@ -1,14 +1,16 @@
 # UE Boom
 
-A [Home Assistant](https://www.home-assistant.io) custom component to turn a [Ultimate Ears](https://www.ultimateears.com) **UE Boom / Megaboom** speaker on and off remotely over Bluetooth Low Energy (BLE).
+A [Home Assistant](https://www.home-assistant.io) custom component to turn a [Ultimate Ears](https://www.ultimateears.com) **UE Boom / Megaboom** speaker on remotely over Bluetooth Low Energy (BLE).
 
 [![Open your Home Assistant instance and open this repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=kernelb00t&repository=homeassistant-ue-boom&category=integration)
 
 It exposes:
 
-- Two **buttons**: `Power on` / `Power off` — send the magic BLE packet that wakes the speaker from standby or puts it back to sleep.
+- One **button**: `Power on` — sends the magic BLE packet that wakes the speaker from standby.
 - One **binary sensor**: `Bluetooth signal` — `on` while the speaker's BLE beacon is received reliably, `off` once it stops.
 - One **sensor**: `Battery` — reads the battery level over BLE (only while the speaker is in standby).
+
+> **Turning off is not supported.** Powering the speaker off requires a classic Bluetooth (RFCOMM) connection or a paired bond, which Home Assistant's BLE-only Bluetooth integration cannot do. This integration only wakes the speaker.
 
 > **Important — how state works.** The speaker only emits its BLE beacon while it is **off (standby)**. Once turned on it switches to classic Bluetooth and disappears from the BLE scan. There is no way to *query* the on/off state over BLE, so this integration is intentionally **honest**: the binary sensor reports raw BLE reachability (on = beacon seen reliably, off = beacon lost), and it does not claim to know whether the speaker is on, off, or out of range.
 
@@ -52,7 +54,7 @@ The magic packet is a 7-byte GATT write to characteristic `c6d6dc0d-07f5-47ef-9b
 <trusted_mac (6 bytes)> + <command (1 byte)>
 ```
 
-where `command` is `0x01` (power on) or `0x02` (power off). The speaker only honors a GATT **Write Request** (with response).
+where `command` is `0x01` (power on). The speaker only honors a GATT **Write Request** (with response).
 
 ## Acknowledgements
 
