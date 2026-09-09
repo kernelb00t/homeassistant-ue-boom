@@ -5,6 +5,7 @@
   "config_flow": true,
   "dependencies": ["bluetooth"],
   "documentation": "https://github.com/kernelb00t/homeassistant-ue-boom",
+  "issue_tracker": "https://github.com/kernelb00t/homeassistant-ue-boom/issues",
   "iot_class": "local_polling",
   "version": "1.0.0",
   "bluetooth": [
